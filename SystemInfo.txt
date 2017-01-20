@@ -1,0 +1,45 @@
+user admin:			jpquintanilha@ua.pt	password: Abc123.	(o ponto faz parte da password)
+exemplo user nao admin:		bfhenriques@ua.pt	password: Abc123.
+
+------
+
+Utilizadores Públicos:
+
+- Acesso à lista de filmes
+- Acesso à info de cada filme, incluindo reviews (comentários) feitas a esse filme
+- Acesso a RSS feeds dos 'Recent Movies' e 'Top Sellers'
+
+Utilizadores Registados:
+
+- Acesso ao mesmo que os utilizadores públicos
+- Uma página pessoal com informação da sua conta (filmes comprados, filmes desejados, reviews feitas)
+- Possibilidade de adicionar filmes à sua 'Wishlist'
+- Possibilidade de compra de filmes (um filme que esteja na wishlist, ao ser comprado deixa de estar na wishlist)
+- Possibilidade de comentar os filmes (apenas se o filme tiver sido comprado)
+
+Admin:
+
+- Acesso ao mesmo que os utilizadores registados
+- Acesso a uma área de admin (/Admin/Area.aspx)
+	- possibilidade de inserir novos filmes na plataforma através do ID do IMDB
+	- acesso a estatísticas da plataforma
+
+------
+
+Na BD temos:
+
+- Tabela com informação dos filmes
+- Tabela com comentários (reviews)
+- Tabela de Purchases
+- Tabela de Wishlist
+
+------
+
+Pormenores:
+
+- Para a informação dos filmes fazemos uso de uma api externa (omdbapi.com) que acedemos em real-time
+- Na página de info de cada filme existe um 'Feature Video', que nos oferece um vídeo alusivo ao filme em questão.
+Para tal usamos uma api externa (myapifilms.com)
+- Aquando da inserção de um novo filme na plataforma atribuimos uma 'insertDate' para podermos formar a lista
+'Recent Movies' na página principal
+- Um filme que esteja na wishlist, ao ser comprado deixa de estar na wishlist
